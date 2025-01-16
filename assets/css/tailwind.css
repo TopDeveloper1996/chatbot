@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("assets/css/scrollbar.css");
+@import url("assets/css/transition.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    --h-navbar-height: 4rem;
+    --v-navbar-width: 4.5rem;
+    --passive-invoices-color: 82, 100, 207;
+    --active-invoices-color: 118, 65, 159;
+}
+.apexcharts-menu,
+.apexcharts-menu-open {
+    @apply bg-surface border-outline rounded-xl !important;
+}
+.apexcharts-menu-item {
+    @apply hover:bg-text/25 rounded-lg !important;
+}
+.apexcharts-legend-marker {
+    @apply flex-shrink-0 !important;
+}
+.apexcharts-tooltip-title,
+.apexcharts-tooltip,
+.apexcharts-xaxistooltip,
+.apexcharts-yaxistooltip {
+    border: 1px solid theme(colors.outline) !important;
+    background-color: theme(colors.surface) !important;
+    color: theme(colors.text) !important;
+}
+.apexcharts-xaxistooltip-bottom:after {
+    border-bottom-color: theme(colors.surface) !important;
+}
+
+.primary-button {
+    @apply disabled:bg-accent/50 flex flex-row border-[2px] border-accent disabled:border-transparent items-center justify-center gap-4 bg-accent rounded-xl px-4 py-2  disabled:text-outline text-text hover:text-white font-bold;
+}
+.secondary-button {
+    @apply disabled:bg-surface/50 border-[2px] border-accent disabled:border-transparent flex flex-row items-center justify-center gap-4 bg-surface rounded-xl px-4 py-2 disabled:text-outline text-text hover:text-white font-bold;
+}
+
+body {
+    font-family: "Poppins";
+    @apply bg-background text-text m-0 overflow-y-scroll overflow-x-clip flex w-screen h-screen;
+}
+
+.divider {
+    @apply h-[2px] bg-outline w-full my-8 rounded-full;
+}
+
+input {
+    @apply my-0 mx-0 px-4 py-3 w-full bg-background border-outline focus:border-accent focus:outline-none border-[2px] rounded-xl;
+}
+
+h1 {
+    @apply text-3xl text-white mb-8;
+}
+
+h2 {
+    @apply text-2xl text-white mb-6;
+}
+
+h3 {
+    @apply text-xl text-white mb-4;
+}
+/* TABLE */
+table {
+    @apply table-auto border-collapse border border-gray-700 text-left text-wrap rounded-xl w-full border-spacing-[0px];
+}
+table tr:last-child td:first-child {
+    @apply rounded-bl-xl;
+}
+
+table tr:last-child td:last-child {
+    @apply rounded-br-xl;
+}
+
+table th:first-child {
+    @apply rounded-tl-xl;
+}
+table th:last-child {
+    @apply rounded-tr-xl;
+}
+
+th {
+    @apply border border-gray-700 p-2 bg-surface;
+}
+
+td {
+    @apply p-1 md:p-2 border-[1px] border-outline;
+}
+
+table tbody tr:hover {
+    @apply bg-outline/60;
+}
+
+.no-hover tbody tr:hover {
+    @apply bg-transparent;
+}
+
+/* Chrome, Safari, Edge, Opera */
+@layer base {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
